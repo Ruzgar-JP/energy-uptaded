@@ -1,0 +1,176 @@
+{
+  "design_system": {
+    "identity": {
+      "brand_name": "Alarko Enerji",
+      "tone": "Professional, Institutional, Eco-friendly, Trustworthy, High-Yield",
+      "primary_language": "tr-TR"
+    },
+    "colors": {
+      "palette": {
+        "primary": {
+          "DEFAULT": "#0F3935",
+          "foreground": "#FFFFFF",
+          "description": "Deep Forest Teal - Used for primary buttons, hero backgrounds, footer, and active states."
+        },
+        "secondary": {
+          "DEFAULT": "#10B981",
+          "foreground": "#FFFFFF",
+          "description": "Emerald Green - Used for accents, success states, positive trends, and call-to-actions."
+        },
+        "accent": {
+          "DEFAULT": "#D1FAE5",
+          "foreground": "#064E3B",
+          "description": "Mint Green - Used for backgrounds of icons, active tab indicators, and subtle highlights."
+        },
+        "background": {
+          "DEFAULT": "#F8FAFC",
+          "paper": "#FFFFFF",
+          "dark": "#020617"
+        },
+        "text": {
+          "primary": "#0F172A",
+          "secondary": "#64748B",
+          "muted": "#94A3B8"
+        },
+        "status": {
+          "success": "#10B981",
+          "warning": "#F59E0B",
+          "error": "#EF4444",
+          "info": "#3B82F6"
+        }
+      },
+      "theme_strategy": "Light mode for main dashboard and content to ensure readability and trust. Dark mode (Deep Teal) for Landing Page Hero, Footer, and High-Impact Marketing sections."
+    },
+    "typography": {
+      "font_family": {
+        "headings": "Manrope, sans-serif",
+        "body": "Inter, sans-serif",
+        "mono": "JetBrains Mono, monospace"
+      },
+      "scale": {
+        "h1": "text-4xl md:text-6xl font-bold tracking-tight",
+        "h2": "text-3xl md:text-4xl font-semibold tracking-tight",
+        "h3": "text-2xl font-semibold",
+        "body_lg": "text-lg leading-relaxed",
+        "body_base": "text-base leading-relaxed text-slate-600",
+        "caption": "text-sm text-slate-500"
+      }
+    },
+    "spacing": {
+      "container_padding": "px-4 md:px-8 lg:px-12",
+      "section_gap": "py-16 md:py-24",
+      "card_padding": "p-6 md:p-8"
+    },
+    "layout": {
+      "border_radius": {
+        "default": "rounded-xl",
+        "card": "rounded-2xl",
+        "button": "rounded-lg"
+      },
+      "shadows": {
+        "card": "shadow-sm hover:shadow-md transition-shadow duration-300",
+        "floating": "shadow-xl shadow-teal-900/10"
+      }
+    }
+  },
+  "components": {
+    "shadcn_ui": [
+      "Button",
+      "Card",
+      "Dialog",
+      "Input",
+      "Label",
+      "Select",
+      "Table",
+      "Tabs",
+      "Avatar",
+      "Badge",
+      "Progress",
+      "Accordion",
+      "Sheet",
+      "DropdownMenu",
+      "Form",
+      "Toast"
+    ],
+    "custom_components": [
+      {
+        "name": "ProjectCard",
+        "description": "Displays a RES/GES project with image, progress bar, return rate, and 'Invest' button.",
+        "usage": "Projects Listing, Dashboard Active Investments"
+      },
+      {
+        "name": "InvestmentTierCard",
+        "description": "Comparison card for Başlangıç, Profesyonel, Kurumsal plans.",
+        "usage": "Landing Page"
+      },
+      {
+        "name": "StatCard",
+        "description": "Dashboard metric card showing Total Investment, Monthly Return, etc.",
+        "usage": "Dashboard, Admin Panel"
+      },
+      {
+        "name": "BankSelector",
+        "description": "Grid of bank logos. Clicking one reveals IBAN details.",
+        "usage": "Deposit Page"
+      }
+    ]
+  },
+  "assets": {
+    "images": {
+      "hero_bg": "https://images.pexels.com/photos/671585/pexels-photo-671585.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "solar_project": "https://images.unsplash.com/photo-1758427971365-2b40ee64352a?crop=entropy&cs=srgb&fm=jpg",
+      "wind_project": "https://images.unsplash.com/photo-1579297658873-f49f379d28ad?crop=entropy&cs=srgb&fm=jpg",
+      "about_team": "https://images.unsplash.com/photo-1769740333462-9a63bfa914bc?crop=entropy&cs=srgb&fm=jpg",
+      "investor_meeting": "https://images.unsplash.com/photo-1758518727193-a8da31447858?crop=entropy&cs=srgb&fm=jpg",
+      "modern_building": "https://images.unsplash.com/photo-1651304855593-29cec2326766?crop=entropy&cs=srgb&fm=jpg"
+    },
+    "icons": {
+      "library": "lucide-react",
+      "preferred": [
+        "Wind",
+        "Sun",
+        "TrendingUp",
+        "ShieldCheck",
+        "Users",
+        "Wallet",
+        "Landmark",
+        "FileText",
+        "Bell"
+      ]
+    }
+  },
+  "functionality": {
+    "auth": {
+      "methods": ["Email/Password", "Google OAuth"],
+      "pages": ["/login", "/register", "/forgot-password"]
+    },
+    "dashboard": {
+      "role_investor": {
+        "features": ["Portfolio Overview", "Project Marketplace", "Deposit/Withdraw", "KYC Upload", "Transaction History"]
+      },
+      "role_admin": {
+        "features": ["User Management", "KYC Approval", "Bank Management", "Portfolio Controls", "System Stats"],
+        "route": "/admin"
+      }
+    },
+    "kyc_process": {
+      "steps": ["Upload ID Front", "Upload ID Back", "Admin Review", "Approval Notification"]
+    }
+  },
+  "instructions_to_main_agent": [
+    "Use 'Manrope' for all headings to give a distinct professional feel.",
+    "Implement the Admin Panel on a completely separate layout (Sidebar left, white bg).",
+    "For the Landing Page, use a sticky header that changes style on scroll (transparent to solid teal).",
+    "Use 'recharts' for the Portfolio Growth chart.",
+    "Ensure all monetary values are formatted as Turkish Lira (₺).",
+    "The 'Deposit' flow must be simulated: User clicks Deposit -> Selects Bank -> Sees IBAN -> Enters Amount -> Submits Request.",
+    "Notifications should be real-time using a context or polling mock.",
+    "Use 'sonner' for all toast notifications (success/error)."
+  ],
+  "universal_guidelines": [
+    "Do not use generic gradients. Use solid deep colors or subtle mesh gradients if absolutely necessary.",
+    "Ensure 4.5:1 contrast ratio for all text.",
+    "Use 24px-32px padding inside cards.",
+    "Add 'data-testid' to all interactive elements."
+  ]
+}
