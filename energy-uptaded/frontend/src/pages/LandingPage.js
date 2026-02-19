@@ -21,10 +21,18 @@ export default function LandingPage() {
   const [usdRate, setUsdRate] = useState(38);
   const [videoIndex, setVideoIndex] = useState(0);
 
-  useEffect(() => {
-    axios.get(`${API}/projects`).then(r => setProjects(r.data)).catch(() => {});
-    axios.get(`${API}/usd-rate`).then(r => setUsdRate(r.data.rate)).catch(() => {});
-  }, []);
+useEffect(() => {
+  axios.get(`${API}/projects`)
+    .then(r => {
+      console.log("PROJECT RESPONSE:", r.data);
+      setProjects(r.data.projects || r.data);
+    })
+    .catch(() => {});
+
+  axios.get(`${API}/usd-rate`)
+    .then(r => setUsdRate(r.data.rate))
+    .catch(() => {});
+}, []);
 
   // Auto-rotate videos every 8 seconds
   useEffect(() => {
